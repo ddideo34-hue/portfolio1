@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Motion & Promo Designer</title>
+  <style>
+    /* ---------------- General Styles ---------------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #111111;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* ---------------- Hero Section ---------------- */
+    header {
+      background-color: #1E2A38;
+      color: #ffffff;
+      text-align: center;
+      padding: 100px 20px 80px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    header .cta-btn {
+      background-color: #FF6B00;
+      color: #ffffff;
+      padding: 15px 30px;
+      font-weight: bold;
+      border: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    header .cta-btn:hover {
+      background-color: #e65a00;
+    }
+
+    /* ---------------- About Section ---------------- */
+    section#about {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    section#about h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #1E2A38;
+    }
+
+    section#about p {
+      font-size: 1.1rem;
+      color: #111111;
+    }
+
+    /* ---------------- Portfolio Section ---------------- */
+    section#portfolio {
+      background-color: #f5f5f5;
+      padding: 60px 20px;
+    }
+
+    section#portfolio h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #1E2A38;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .project {
+      background-color: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    .project video, .project img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .project-content {
+      padding: 15px 20px;
+    }
+
+    .project-content h3 {
+      font-size: 1.2rem;
+      color: #1E2A38;
+      margin-bottom: 10px;
+    }
+
+    .project-content p {
+      font-size: 0.95rem;
+      color: #111111;
+    }
+
+    /* ---------------- Testimonials Section ---------------- */
+    section#testimonials {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    section#testimonials h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #1E2A38;
+    }
+
+    .testimonial-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      justify-items: center;
+    }
+
+    .testimonial {
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+      font-style: italic;
+    }
+
+    .testimonial p {
+      font-size: 1rem;
+      color: #111111;
+      margin-bottom: 10px;
+    }
+
+    .testimonial span {
+      display: block;
+      font-weight: bold;
+      color: #1E2A38;
+      margin-top: 10px;
+    }
+
+    /* ---------------- Footer / CTA ---------------- */
+    footer {
+      background-color: #1E2A38;
+      color: #ffffff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    footer h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    footer .cta-btn {
+      background-color: #FF6B00;
+      color: #ffffff;
+      padding: 15px 30px;
+      font-weight: bold;
+      border: none;
+      font-size: 1rem;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    footer .cta-btn:hover {
+      background-color: #e65a00;
+    }
+    /* ---------------- Call Section ---------------- */
+.call-box {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.call-box p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.phone-number {
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.copy-btn {
+  margin-left: 10px;
+  background-color: #FF6B00;
+  color: #ffffff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.copy-btn:hover {
+  background-color: #e65a00;
+}
+
+
+    /* ---------------- Responsive ---------------- */
+    @media (max-width: 1024px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+      section#about h2,
+      section#portfolio h2,
+      section#testimonials h2,
+      footer h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      section#about p {
+        font-size: 1rem;
+      }
+      .project-content h3 {
+        font-size: 1.1rem;
+      }
+      .project-content p {
+        font-size: 0.9rem;
+      }
+      .testimonial p {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 80px 15px 60px;
+      }
+      footer {
+        padding: 50px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>Motion & Promo Visual Designer</h1>
+    <p>Helping businesses and events attract attention with clean, high-impact designs.</p>
+    <a href="https://wa.me/message/JF6EKXEDAVS2E1"><button class="cta-btn">Book Now on WhatsApp</button></a>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I create professional logos, static flyers, and motion flyers designed to grab attention and help brands stand out. Fast delivery, clear communication, and quality results are my focus.</p>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>My Work</h2>
+    <div class="projects">
+      <!-- Motion Flyers -->
+      <div class="project">
+        <video controls>
+          <source src="image/lv_0_20260212010734.mp4" type="video/mp4">
+        </video>
+        <div class="project-content">
+          <h3>Motion Flyer 1</h3>
+          <p>
+            A Parisian artist needed a high-energy motion cover for his new single. I synched the visuals to the beat instantly.</p>
+        </div>
+      </div>
+      <div class="project">
+        <video controls>
+          <source src="image/lv_0_20260212011005.mp4" type="video/mp4">
+        </video>
+        <div class="project-content">
+          <h3>Motion Flyer 2</h3>
+          <p>
+            An event planner emailed about a "Lavish Sweets" pool party. I animated the splashy visuals and delivered a high-energy flyer!</p>
+        </div>
+      </div>
+      <div class="project">
+        <video controls>
+          <source src="image/lv_0_20260212010842.mp4" type="video/mp4">
+        </video>
+        <div class="project-content">
+          <h3>Motion Flyer 3</h3>
+          <p>A boutique owner reached out on Instagram for a "GLOW fashion" motion flyer. I added sparkling effects and delivered fast!</p>
+        </div>
+      </div>
+
+      <!-- Static Flyers -->
+      <div class="project">
+        <img src="image/871a0f4bd32880990ab0030a1722a520.png" alt="Static Flyer 1">
+        <div class="project-content">
+          <h3>Static Flyer 1</h3>
+          <p>
+            A local baker in Buea DM'd me, desperate for a flyer. I designed this vibrant layout overnight; they loved it!</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="image/nails (2).png" alt="Static Flyer 2">
+        <div class="project-content">
+          <h3>Static Flyer 2</h3>
+          <p>
+            A nail salon owner DMed me for a "luxury" social media flyer. I used elegant typography and high-end imagery, delivering a chic design that perfectly showcased their artistry.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="image/party.jpg" alt="Static Flyer 3">
+        <div class="project-content">
+          <h3>Static Flyer 3</h3>
+          <p>
+            An event promoter found my portfolio on TikTok and requested a high-energy "Midnight Campus Bash" flyer. I delivered this neon-themed masterpiece.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="image/3689ade86c248ec9a22cf6a9814d59e1.png" alt="Static Flyer 3">
+        <div class="project-content">
+          <h3>Static Flyer 3</h3>
+          <p>
+            The Benin City Zonal Pastor called, needing a revival flyer. I captured the spiritual fire, delivered promptly, and souls were stirred!</p>
+        </div>
+      </div>
+
+
+      <!-- Logo Projects -->
+      <div class="project">
+        <img src="image/logo1 (1).png" alt="Logo 1">
+        <div class="project-content">
+          <h3>Logo 1</h3>
+          <p>A fintech founder needed a bold identity for PayLink Africa. I crafted this circular blue logo and delivered excellence.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="image/logo1 (2).png" alt="Logo 2">
+        <div class="project-content">
+          <h3>Logo 2</h3>
+          <p> 
+            A real estate developer messaged me for a "NovaNest" identity. I designed this sleek, architectural house logo and delivered perfection.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="image/hOlAzW0RTMK8LsF3d_Xqiw@2k (1).webp" alt="Logo 3">
+        <div class="project-content">
+          <h3>Logo 3</h3>
+          <p>A tech startup founder messaged me on LinkedIn for a modern "W" logo. I delivered this geometric, blue masterpiece within 48 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <h2>What My Clients Say</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial">
+        <p>"The motion flyer you made sold out our event faster than we expected! Highly recommend."</p>
+        <span>- Tunde A., Club Owner</span>
+      </div>
+      <div class="testimonial">
+        <p>"Our sales increased by 40% after using the promotional flyer. Excellent work!"</p>
+        <span>- Chioma K., Fashion Vendor</span>
+      </div>
+      <div class="testimonial">
+        <p>"The logo and flyers gave our brand a professional image. Clients keep asking who designed them."</p>
+        <span>- Michael O., Startup Founder</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Footer -->
+  <footer>
+    <h2>Ready to Promote Your Event or Business?</h2> 
+    <a href="https://wa.me/message/JF6EKXEDAVS2E1"><button class="cta-btn">Book Now on WhatsApp</button></a>
+    <div class="call-box">
+      <p>Or call me directly:</p>
+      <span class="phone-number" id="phoneNumber">+234 812 345 6789</span>
+      <br><br>
+      <a href="tel:+2348123456789" class="cta-btn" style="display:inline-block; margin-top:10px;">Call Now</a>
+    </div>
+    
+  </footer>
+
+</body>
+</html>
